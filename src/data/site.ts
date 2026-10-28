@@ -29,17 +29,23 @@ export const contact = {
  * Repositories the site links to.
  * Set `live` to true once a repo is public, and the card shows a working link
  * instead of "Coming soon".
+ * Set `demo` to the deployed URL once the project is hosted, and the card adds
+ * a "Live demo" link. Leave it null for projects with nothing to visit.
  */
+type Repo = { url: string; live: boolean; demo: string | null };
+
 export const repos = {
   issNotifier: {
     url: "https://github.com/wilbert11810/iss-overhead-notifier",
     live: false,
+    demo: null,
   },
   financeTracker: {
     url: "https://github.com/wilbert11810/finance-tracker",
-    live: false,
+    live: true,
+    demo: "https://finance-tracker-hupw.onrender.com",
   },
-} as const;
+} satisfies Record<string, Repo>;
 
 export const nav = [
   { label: "Work", href: "/#work" },
