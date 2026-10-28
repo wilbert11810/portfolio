@@ -2,7 +2,7 @@
 
 Personal site. Next.js 15 (App Router), TypeScript, no CSS framework.
 
-Live at: _(add the URL once Vercel is connected)_
+Live at: https://portfolio-navy-delta-52.vercel.app
 
 ## Running it
 
@@ -27,7 +27,11 @@ src/
       a-star/               shell, to fill in
       sfia/                 shell, to fill in
       iss-notifier/         shell, to fill in
-      finance-tracker/      shell, to fill in
+      finance-tracker/      finished case study (not linked from the card)
+    icon.svg                favicon
+    opengraph-image.tsx     link preview image, built from site.ts
+    not-found.tsx           404 page
+    sitemap.ts, robots.ts   for search engines; use site.url
     globals.css             all styling; design tokens at the top
   components/
     Header.tsx
@@ -36,7 +40,7 @@ src/
     CaseStudy.tsx           shared header for /work pages (back link, tag, title)
     MethodDiagram.tsx       the verification loop, inline SVG
   data/
-    site.ts                 EVERY link, email, phone, CV path
+    site.ts                 site URL, EVERY link, email, phone, CV path
     projects.ts             the six projects
 public/
   portrait-hero.jpg         hero photo, 1400 × 2100
@@ -53,12 +57,13 @@ three kinds:
 
 ```ts
 { kind: "caseStudy", href: "/work/third-cache" }   // renders "Read how it was built"
-{ kind: "repo", href: "...", live: false }         // renders "Repository coming soon"
+{ kind: "repo", href: "...", live: false, demo: null } // renders "Repository coming soon"
 { kind: "private", note: "Client-owned, code private" }
 ```
 
 When a repo goes public, flip `live` to `true` in `src/data/site.ts` under
-`repos` and the card becomes a working link. That is the only change needed.
+`repos` and the card becomes a working link. Set `demo` to the deployed URL
+and the card adds a "Live demo" link beside it.
 
 **Case studies** live under `src/app/work/<slug>/page.tsx`. Each page wraps
 its content in `CaseStudyShell`, which renders the back link, tag, date line
@@ -77,14 +82,17 @@ dev. Size and crop are set by `.portrait` in `globals.css`.
 
 - [x] Add a portrait to the hero
 - [x] Drop the CV PDF into `public/` as `Wilbert_Kruskie_CV.pdf`
-- [ ] Publish the ISS notifier and Finance Tracker repos, then set `live: true`
-- [ ] Fill in the case study shells under `work/` (PlanForge, A*, SFIA, ISS notifier, Finance Tracker)
-- [ ] Set the real domain in `metadataBase` in `layout.tsx`
+- [x] Publish the Finance Tracker repo and live demo
+- [x] Deploy to Vercel
+- [ ] Publish the ISS notifier repo, then set `live: true`
+- [ ] Fill in the case study shells under `work/` (PlanForge, A*, SFIA, ISS notifier)
+- [ ] Point the PlanForge and A* cards at finished pages
 
 ## Deploying
 
-Push to GitHub, import the repo at vercel.com, accept the defaults. Vercel
-detects Next.js and builds it. Every push to `main` redeploys.
+Hosted on Vercel, connected to this GitHub repo. Every push to `main`
+redeploys. If a custom domain is added, change `url` in `src/data/site.ts`;
+the metadata, sitemap and robots file all read from it.
 
 ## Notes
 

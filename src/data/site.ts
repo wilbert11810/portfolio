@@ -4,6 +4,8 @@
  */
 
 export const site = {
+  /** The live address. Change this if a custom domain is added. */
+  url: "https://portfolio-navy-delta-52.vercel.app",
   name: "Wilbert Kruskie",
   role: "Junior Software Developer",
   location: "Melbourne, Australia",
