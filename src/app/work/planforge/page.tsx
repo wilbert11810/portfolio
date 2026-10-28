@@ -1,10 +1,15 @@
-import type { Metadata } from "next";
 import CaseStudyShell from "@/components/CaseStudy";
+import { pageMetadata } from "@/data/metadata";
+import { projects } from "@/data/projects";
 
-export const metadata: Metadata = {
-  title: "PlanForge — case study",
-  description: "TODO",
-};
+// TODO: replace with a description of the case study once it's written.
+const project = projects.find((p) => p.slug === "planforge")!;
+
+export const metadata = pageMetadata({
+  title: "PlanForge case study",
+  description: project.does,
+  path: "/work/planforge",
+});
 
 export default function PlanForge() {
   return (

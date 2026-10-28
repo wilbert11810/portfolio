@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
 import { contact, site } from "@/data/site";
+import { pageMetadata } from "@/data/metadata";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Let's connect",
-  description: `Get in touch with ${site.name}, a junior software developer in Melbourne.`,
-};
+  description: `Get in touch with ${site.name}, a junior software developer in Melbourne. Email, LinkedIn or GitHub, and a CV to download. Available now for onsite, hybrid or remote roles.`,
+  path: "/connect",
+});
 
 const MailIcon = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

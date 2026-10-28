@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
-import { contact, site } from "@/data/site";
+import { contact } from "@/data/site";
+import { pageMetadata } from "@/data/metadata";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "About",
   description:
-    "Computer Science graduate from Swinburne, based in Melbourne. Five months as the sole developer on a commercial product.",
-};
+    "Computer Science graduate from Swinburne, based in Melbourne. Five months as the sole developer on a commercial product, plus a business analyst internship and a nine-month client capstone.",
+  path: "/about",
+});
 
 const experience = [
   {

@@ -1,10 +1,15 @@
-import type { Metadata } from "next";
 import CaseStudyShell from "@/components/CaseStudy";
+import { pageMetadata } from "@/data/metadata";
+import { projects } from "@/data/projects";
 
-export const metadata: Metadata = {
-  title: "ISS overhead notifier — case study",
-  description: "TODO",
-};
+// TODO: replace with a description of the case study once it's written.
+const project = projects.find((p) => p.slug === "iss-notifier")!;
+
+export const metadata = pageMetadata({
+  title: "ISS overhead notifier case study",
+  description: project.does,
+  path: "/work/iss-notifier",
+});
 
 export default function IssNotifier() {
   return (

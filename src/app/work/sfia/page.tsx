@@ -1,10 +1,15 @@
-import type { Metadata } from "next";
 import CaseStudyShell from "@/components/CaseStudy";
+import { pageMetadata } from "@/data/metadata";
+import { projects } from "@/data/projects";
 
-export const metadata: Metadata = {
-  title: "SFIA self-assessment — case study",
-  description: "TODO",
-};
+// TODO: replace with a description of the case study once it's written.
+const project = projects.find((p) => p.slug === "sfia")!;
+
+export const metadata = pageMetadata({
+  title: "SFIA self-assessment case study",
+  description: project.does,
+  path: "/work/sfia",
+});
 
 export default function Sfia() {
   return (

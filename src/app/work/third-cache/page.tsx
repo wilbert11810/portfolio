@@ -1,11 +1,12 @@
 import Link from "next/link";
-import type { Metadata } from "next";
+import { pageMetadata } from "@/data/metadata";
 
-export const metadata: Metadata = {
-  title: "Third Cache — case study",
+export const metadata = pageMetadata({
+  title: "Third Cache case study",
   description:
     "Making a 224-technique Shopify scanner stop talking to the network: the problem, the wrong first fix, and the one that worked.",
-};
+  path: "/work/third-cache",
+});
 
 const facts = [
   ["MY ROLE", "Sole developer"],

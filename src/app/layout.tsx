@@ -2,19 +2,24 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { site } from "@/data/site";
+import { siteDescription } from "@/data/metadata";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.role}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} - ${site.role}`,
+    template: `%s - ${site.name}`,
   },
-  description:
-    "Computer Science graduate in Melbourne. Five months as the only developer on a commercial product, a nine-month client delivery, and a security review that closed six access-control defects.",
+  description: siteDescription,
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
+  alternates: { canonical: "/" },
   openGraph: {
-    title: `${site.name} — ${site.role}`,
-    description: site.tagline,
+    title: `${site.name} - ${site.role}`,
+    description: siteDescription,
+    url: "/",
+    siteName: site.name,
     type: "website",
     locale: "en_AU",
   },

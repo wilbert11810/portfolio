@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
 import CaseStudyShell from "@/components/CaseStudy";
+import { pageMetadata } from "@/data/metadata";
 
-export const metadata: Metadata = {
-  title: "Finance Tracker — case study",
+export const metadata = pageMetadata({
+  title: "Finance Tracker case study",
   description:
     "A university finance app that only ran on the campus server, rebuilt to run anywhere: the security holes I found and fixed, and a containerised deploy on Render + Aiven.",
-};
+  path: "/work/finance-tracker",
+});
 
 const REPO = "https://github.com/wilbert11810/finance-tracker";
 const DEMO = "https://finance-tracker-hupw.onrender.com";
