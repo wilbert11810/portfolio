@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: `%s — ${site.name}`,
   },
   description:
-    "Computer Science graduate in Melbourne. A year as the only developer on a commercial product, a nine-month client delivery, and a security review that closed six access-control defects.",
+    "Computer Science graduate in Melbourne. Five months as the only developer on a commercial product, a nine-month client delivery, and a security review that closed six access-control defects.",
   openGraph: {
     title: `${site.name} — ${site.role}`,
     description: site.tagline,

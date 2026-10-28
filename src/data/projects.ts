@@ -58,7 +58,7 @@ export const projects: Project[] = [
   {
     slug: "finance-tracker",
     name: "Finance Tracker",
-    does: "Logs expenses by category and reports them back as bar and doughnut charts over a relational schema.",
+    does: "Logs expenses by category and reports them back as a bar chart over a relational schema.",
     stack: ["PHP", "Vue.js", "Chart.js", "MySQL", "Docker"],
     link: {
       kind: "repo",

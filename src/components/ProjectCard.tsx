@@ -22,19 +22,22 @@ export default function ProjectCard({ project }: { project: Project }) {
         </Link>
       )}
 
-      {link.kind === "repo" &&
-        (link.live ? (
-          <a
-            href={link.href}
-            className="card__action"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open on GitHub &rarr;
-          </a>
-        ) : (
-          <span className="card__note">Repository coming soon</span>
-        ))}
+      {link.kind === "repo" && (
+        <div className="card__actions">
+          {link.demo && (
+            <a href={link.demo} target="_blank" rel="noopener noreferrer">
+              Live demo &rarr;
+            </a>
+          )}
+          {link.live ? (
+            <a href={link.href} target="_blank" rel="noopener noreferrer">
+              Open on GitHub &rarr;
+            </a>
+          ) : (
+            <span className="card__note">Repository coming soon</span>
+          )}
+        </div>
+      )}
 
       {link.kind === "private" && <span className="card__note">{link.note}</span>}
     </article>

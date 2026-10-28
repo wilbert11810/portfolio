@@ -5,3 +5,6 @@ out/
 .DS_Store
 *.tsbuildinfo
 next-env.d.ts
+
+# Full-size camera original; the site uses public/portrait-hero.jpg
+public/portrait.jpg

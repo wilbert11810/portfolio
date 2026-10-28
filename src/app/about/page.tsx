@@ -4,7 +4,7 @@ import { contact, site } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Computer Science graduate from Swinburne, based in Melbourne. A year as the sole developer on a commercial product.",
+    "Computer Science graduate from Swinburne, based in Melbourne. Five months as the sole developer on a commercial product.",
 };
 
 const experience = [
@@ -25,7 +25,7 @@ const experience = [
   {
     when: "Feb 2023 – Feb 2026",
     where: "Melbourne",
-    role: "BSc Computer Science",
+    role: "Bachelor of Computer Science",
     org: "Swinburne University of Technology",
     body: "Major in software development. Final-year capstone delivered to an external industry client over nine months in a team of five. Worked in retail and hospitality throughout the degree.",
   },
@@ -37,7 +37,7 @@ const skills = [
   { label: "FRONTEND", items: "React · Next.js · Remix · Vue.js · Shopify Polaris" },
   { label: "DATA", items: "PostgreSQL · Supabase · MySQL · Redis" },
   { label: "TESTING", items: "Automated suites · CI pipelines · Selenium · Postman" },
-  { label: "TOOLS", items: "Git · GitHub Actions · Docker · Vercel · Railway" },
+  { label: "TOOLS", items: "Git · GitHub Actions · Docker · Vercel · Railway · Render · Aiven" },
 ];
 
 export default function About() {
