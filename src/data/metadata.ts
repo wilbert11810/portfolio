@@ -14,10 +14,13 @@ export function pageMetadata({
   title,
   description,
   path,
+  published = site.launched,
 }: {
   title: string;
   description: string;
   path: string;
+  /** ISO date (YYYY-MM-DD). Defaults to when the site went live. */
+  published?: string;
 }): Metadata {
   return {
     title,
@@ -30,9 +33,12 @@ export function pageMetadata({
       description,
       url: path,
       siteName: site.name,
-      type: "website",
       locale: "en_AU",
       images: [previewImage],
+      // "article" is the Open Graph type that carries a publish date.
+      type: "article",
+      publishedTime: published,
+      authors: [site.name],
     },
   };
 }

@@ -6,6 +6,8 @@
 export const site = {
   /** The live address. Change this if a custom domain is added. */
   url: "https://portfolio-navy-delta-52.vercel.app",
+  /** First live deploy. Used as the publish date in link previews. */
+  launched: "2026-10-28",
   name: "Wilbert Kruskie",
   role: "Junior Software Developer",
   location: "Melbourne, Australia",

@@ -20,8 +20,10 @@ export const metadata: Metadata = {
     description: siteDescription,
     url: "/",
     siteName: site.name,
-    type: "website",
     locale: "en_AU",
+    type: "article",
+    publishedTime: site.launched,
+    authors: [site.name],
   },
 };
 
