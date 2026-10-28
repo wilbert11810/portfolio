@@ -1,9 +1,6 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/data/site";
 
-// The Node build of next/og can't resolve its bundled font on Windows; edge works everywhere.
-export const runtime = "edge";
-
 export const alt = `${site.name} — ${site.role}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
