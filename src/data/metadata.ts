@@ -34,12 +34,6 @@ export function pageMetadata({
       locale: "en_AU",
       images: [previewImage],
     },
-    twitter: {
-      card: "summary_large_image",
-      title: `${title} - ${site.name}`,
-      description,
-      images: [previewImage],
-    },
   };
 }
 
