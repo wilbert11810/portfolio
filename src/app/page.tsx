@@ -63,8 +63,8 @@ export default function Home() {
       <section className="wrap section" id="work">
         <h2 className="section__head">Work</h2>
         <p className="section__lede">
-          Six projects. Three have a write-up with diagrams explaining how they
-          were built; the rest you can open and use.
+          Six projects, each with a picture of how it works. Some have a full
+          write-up of how they were built, and the live ones you can open and try.
         </p>
         <div className="grid-3">
           {projects.map((project) => (

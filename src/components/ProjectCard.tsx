@@ -1,11 +1,27 @@
+import Image from "next/image";
 import Link from "next/link";
+import FlowDiagram from "@/components/FlowDiagram";
 import type { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
-  const { link } = project;
+  const { link, visual } = project;
 
   return (
     <article className="card">
+      {visual && (
+        <div className={`card__visual card__visual--${visual.kind}`}>
+          {visual.kind === "screenshot" ? (
+            <Image
+              src={visual.src}
+              alt={visual.alt}
+              fill
+              sizes="(max-width: 760px) 100vw, 400px"
+            />
+          ) : (
+            <FlowDiagram flow={visual.flow} />
+          )}
+        </div>
+      )}
       <h3>{project.name}</h3>
       <p>{project.does}</p>
       <div className="chips">

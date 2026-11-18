@@ -18,6 +18,7 @@
 
   --display: "Fraunces", Georgia, "Times New Roman", serif;
   --sans: "Public Sans", system-ui, -apple-system, sans-serif;
+  --mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 
   --page: 1280px;
   --gutter: clamp(20px, 5vw, 80px);
@@ -240,6 +241,25 @@ p {
   object-position: center 30%;
 }
 
+/* ---------- code ---------- */
+
+.code {
+  margin: 8px 0 0;
+  padding: 20px 22px;
+  max-width: 900px;
+  overflow-x: auto;
+  background: var(--ink);
+  color: #e8ece9;
+  border-radius: 12px;
+  font-family: var(--mono);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.code__note {
+  color: #9fb8b0;
+}
+
 /* ---------- section heads ---------- */
 
 .section__head {
@@ -271,6 +291,22 @@ p {
   display: flex;
   flex-direction: column;
   gap: 11px;
+}
+
+/* Full-bleed picture across the top of a project card. */
+.card__visual {
+  position: relative;
+  margin: -22px -24px 6px;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.card__visual--screenshot img {
+  object-fit: cover;
+  object-position: top center;
 }
 
 .card h3 {
